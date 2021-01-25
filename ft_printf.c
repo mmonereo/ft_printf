@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:38:27 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/13 20:45:09 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/21 12:40:07 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,6 @@ size_t ft_strlen(char* str)
 	return(i);
 }
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
-{
-	unsigned char		*dest;
-	const unsigned char	*source;
-
-	dest = (unsigned char *)dst;
-	source = (const unsigned char *)src;
-	while (size--)
-	{
-		*dest++ = *source++;
-	}
-	return ((unsigned char *)dst);
-}
-
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != c)
@@ -62,8 +48,14 @@ void	struct_init(t_flags *flags)
 	flags->printed = 0;
 	flags->left = 0;
 	flags->width = 0;
+	flags->neg = 0;
+	flags->zeroes = 0;
+	flags->is_zero = 0;
 	flags->len = 0;
 	flags->pos = 0;
+	flags->precision = 0;
+	flags->is_precision = 0;
+	flags->upper = 0;
 	flags->done = 0;
 }
 
@@ -71,10 +63,16 @@ void	struct_reset(t_flags *flags)
 {
 	flags->left = 0;
 	flags->width = 0;
+	flags->neg = 0;
+	flags->zeroes = 0;
+	flags->is_zero = 0;
 	flags->len = 0;
+	flags->precision = 0;
+	flags->is_precision = 0;
+	flags->upper = 0;
 }
 
-int	mod_parse (char *format, t_flags *fstruct, va_list ap)
+int		mod_parse (char *format, t_flags *fstruct, va_list ap)
 {
 	if (ft_strchr(CONVERSIONS, format[fstruct->pos]))
 	{
@@ -84,7 +82,7 @@ int	mod_parse (char *format, t_flags *fstruct, va_list ap)
 	}
 	else if (ft_strchr(MODIFIERS, format[fstruct->pos]))
 	{
-		modifiers(format, fstruct);
+		modifiers(format, fstruct, ap);
 	}
 	return (fstruct->pos);
 }
@@ -101,11 +99,7 @@ int	parse(char *format, t_flags *fstruct, va_list ap)
 			{
 				fstruct->pos = fstruct->pos + 1;
 				while (ft_strchr(SYMBOLS, format[fstruct->pos]) && (fstruct->done == 0))
-				{
-					// printf("in the lop\n");
-					// printf("pos lop: %i\n", fstruct->pos);
 					fstruct->pos = mod_parse(format, fstruct, ap);
-				}	
 			}
 		}
 		fstruct->done = 0;
@@ -130,6 +124,7 @@ int	ft_printf(const char *format, ...)
 	final_count = parse(save, fl_struct, ap);
 	va_end(ap);
 	free(fl_struct);
+	free(save);
 	return(final_count);
 }
 
