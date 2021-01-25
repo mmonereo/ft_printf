@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 15:27:13 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/22 02:23:42 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/25 17:18:10 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,31 @@ char				*ft_itoa(int n)
 	{
 		res[0] = '-';
 	}
+	i = len - 1;
+	while (num >= 10)
+	{
+		res[i] = (char)(num % 10 + 48);
+		num = num / 10;
+		i--;
+	}
+	res[i] = (char)(num + 48);
+	res[len] = '\0';
+	return (res);
+}
+
+char				*ft_itoa_nosign(int n)
+{
+	unsigned int	len;
+	unsigned int	i;
+	char			*res;
+	unsigned int 	num;
+	
+	num = n;
+	if (n < 0)
+		num = n * -1;
+	len = ft_numlen(num);
+	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
 	i = len - 1;
 	while (num >= 10)
 	{
@@ -189,17 +214,17 @@ void	is_i(t_flags *f_struct, va_list ap)
 	arg = 0;
 	i = 0;
 	arg = (int)va_arg(ap, int);
-	if (arg < 0 || arg == -2147483648)
+	if (arg < 0)
 	{
 		f_struct->neg = 1;
-			arg = arg * -1;
+		arg = arg * -1;
 	}
 	if (arg == 0 && f_struct->is_precision == 1 && f_struct->precision == 0)
 	{
 		valprec_z(f_struct);
 		return;
 	}
-	to_print = ft_itoa(arg);
+	to_print = ft_itoa_nosign(arg);
 	lenint(f_struct, to_print);
 	printi_width(f_struct);
 	signzero(f_struct, arg);
@@ -211,4 +236,3 @@ void	is_i(t_flags *f_struct, va_list ap)
 	printi_left(f_struct);
 	free(to_print);
 }
-

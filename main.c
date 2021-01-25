@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:38:16 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/22 02:18:54 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/25 17:18:27 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main (void)
 
 							// INT	MAX
 	int var = -2147483648;
-	mine = ft_printf("yo: %040d, 66\n", var);
-		org = printf("og: %040d, 66\n", var);
+	mine = ft_printf("yo: %030d, 66\n", var);
+		org = printf("og: %030d, 66\n", var);
 	printf ("mine: %i,   org: %i\n", mine, org);
 }
