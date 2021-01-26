@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 15:27:13 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 16:32:50 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/26 17:15:05 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	signzero(t_flags *fstruct, int arg)
 {
-	char c;
-	int i;
+	char	c;
+	int		i;
 
 	i = 0;
 	c = '-';
@@ -33,14 +33,14 @@ void	signzero(t_flags *fstruct, int arg)
 			write(1, &c, 1);
 			fstruct->printed += 1;
 		}
-	}	
+	}
 }
 
 void	printi_width(t_flags *fstruct)
 {
 	int		i;
 	char	c;
- 
+
 	if (fstruct->left == 0 && fstruct->width)
 	{
 		c = ' ';
@@ -49,7 +49,7 @@ void	printi_width(t_flags *fstruct)
 		else
 			i = fstruct->width - (fstruct->len);
 		if (fstruct->is_zero == 1 && fstruct->is_precision == 0)
-		{	
+		{
 			fstruct->zeroes = fstruct->width - (fstruct->len);
 			if (fstruct->neg == 1)
 				fstruct->zeroes -= 1;
@@ -89,7 +89,7 @@ void	printi_left(t_flags *fstruct)
 
 void	lenint(t_flags *fstruct, char *to_print)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(to_print);
 	fstruct->len = len;
@@ -97,15 +97,15 @@ void	lenint(t_flags *fstruct, char *to_print)
 	{
 		if (fstruct->precision > len)
 			fstruct->zeroes = fstruct->precision - len;
-	}	
+	}
 }
 
 void	is_i(t_flags *f_struct, va_list ap)
 {
-	intmax_t arg;
-	char *to_print;
-	int i;
-	
+	intmax_t	arg;
+	char		*to_print;
+	int			i;
+
 	arg = 0;
 	i = 0;
 	arg = (int)va_arg(ap, int);
@@ -124,10 +124,7 @@ void	is_i(t_flags *f_struct, va_list ap)
 	printi_width(f_struct);
 	signzero(f_struct, arg);
 	while (to_print[i] != '\0')
-	{
-		write(1, &to_print[i++], 1);
-		f_struct->printed += 1;
-	}
+		f_struct->printed += write(1, &to_print[i++], 1);
 	printi_left(f_struct);
 	free(to_print);
 }

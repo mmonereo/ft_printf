@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 01:34:54 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/22 01:51:37 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/26 17:10:46 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	print_percz(t_flags *fstruct)
 
 void	is_perc(t_flags *f_struct)
 {
-	char c;
-	int i;
+	char	c;
+	int		i;
 
 	i = 0;
 	c = '%';

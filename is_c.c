@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 16:31:26 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/21 16:47:11 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/26 17:11:32 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int		get_len_c(t_flags *fstruct, unsigned char *to_print)
 
 void	is_c(t_flags *f_struct, va_list ap)
 {
-	unsigned char to_print;
-	int i;
-	int len;
-	
+	unsigned char	to_print;
+	int				i;
+	int				len;
+
 	i = 0;
 	to_print = (unsigned char)va_arg(ap, int);
 	len = get_len_c(f_struct, &to_print);
