@@ -6,17 +6,17 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 17:15:09 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/22 02:11:10 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/26 16:30:24 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+#include "libft.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
 #include <stdint.h>
 
 # define	SYMBOLS	"-.*0123456789siudxXpc%"
@@ -70,11 +70,6 @@ void	is_x		(t_flags *f_struct, va_list ap);
 void	is_perc		(t_flags *f_struct);
 void	print_percz	(t_flags *fstruct);
 
-
-size_t	ft_strlen	(char* str);
-int		ft_atoi		(const char *str);
-char	*ft_itoa	(int n);
-char	*ft_strchr	(const char *s, int c);
 char	*ft_itoa_base(uintmax_t value, uintmax_t base);
 char	*ft_itoa_base_upper(intmax_t value, intmax_t base);
 

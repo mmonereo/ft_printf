@@ -6,42 +6,11 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:38:27 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/21 12:40:07 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/26 16:32:48 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-size_t ft_strlen(char* str)
-{
-	size_t i; 
-	
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return(i);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s && *s != c)
-	{
-		s++;
-	}
-	if (*s == (char)c)
-	{
-		return ((char *)s);
-	}
-	return (NULL);
-}
-
 
 void	struct_init(t_flags *flags)
 {
@@ -72,7 +41,7 @@ void	struct_reset(t_flags *flags)
 	flags->upper = 0;
 }
 
-int		mod_parse (char *format, t_flags *fstruct, va_list ap)
+int		mod_parse(char *format, t_flags *fstruct, va_list ap)
 {
 	if (ft_strchr(CONVERSIONS, format[fstruct->pos]))
 	{
@@ -87,7 +56,7 @@ int		mod_parse (char *format, t_flags *fstruct, va_list ap)
 	return (fstruct->pos);
 }
 
-int	parse(char *format, t_flags *fstruct, va_list ap)
+int		parse(char *format, t_flags *fstruct, va_list ap)
 {
 	while (format[fstruct->pos] != '\0')
 	{
@@ -108,7 +77,7 @@ int	parse(char *format, t_flags *fstruct, va_list ap)
 	return(fstruct->printed);
 }
 
-int	ft_printf(const char *format, ...)
+int		ft_printf(const char *format, ...)
 {
 	va_list ap;
 	int final_count;
@@ -116,7 +85,7 @@ int	ft_printf(const char *format, ...)
 	t_flags *fl_struct;
 	
 	final_count = 0;
-	save = strdup(format);
+	save = ft_strdup(format);
 	if (!(fl_struct = malloc(sizeof(t_flags))))
 		return(0);
 	struct_init(fl_struct);
@@ -127,8 +96,3 @@ int	ft_printf(const char *format, ...)
 	free(save);
 	return(final_count);
 }
-
-
-
-
-

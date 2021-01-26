@@ -6,97 +6,13 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 15:27:13 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/25 17:18:10 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/26 16:32:50 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int			ft_numlen(unsigned int n)
-{
-	unsigned int len;
-
-	len = 0;
-	while (n >= 10)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len + 1);
-}
-
-static unsigned int	ft_numselect(int n, unsigned int *num)
-{
-	unsigned int len;
-
-	if (n < 0)
-	{
-		*num = (unsigned int)(n * -1);
-		len = ft_numlen(*(num));
-		len = len + 1;
-	}
-	else
-	{
-		len = ft_numlen(*(num));
-	}
-	return (len);
-}
-
-char				*ft_itoa(int n)
-{
-	unsigned int	num;
-	unsigned int	len;
-	unsigned int	i;
-	char			*res;
-
-	num = n;
-	len = ft_numselect(n, &num);
-	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
-	{
-		return (NULL);
-	}
-	if (n < 0)
-	{
-		res[0] = '-';
-	}
-	i = len - 1;
-	while (num >= 10)
-	{
-		res[i] = (char)(num % 10 + 48);
-		num = num / 10;
-		i--;
-	}
-	res[i] = (char)(num + 48);
-	res[len] = '\0';
-	return (res);
-}
-
-char				*ft_itoa_nosign(int n)
-{
-	unsigned int	len;
-	unsigned int	i;
-	char			*res;
-	unsigned int 	num;
-	
-	num = n;
-	if (n < 0)
-		num = n * -1;
-	len = ft_numlen(num);
-	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
-		return (NULL);
-	i = len - 1;
-	while (num >= 10)
-	{
-		res[i] = (char)(num % 10 + 48);
-		num = num / 10;
-		i--;
-	}
-	res[i] = (char)(num + 48);
-	res[len] = '\0';
-	return (res);
-}
-
-void signzero(t_flags *fstruct, int arg)
+void	signzero(t_flags *fstruct, int arg)
 {
 	char c;
 	int i;
@@ -183,27 +99,6 @@ void	lenint(t_flags *fstruct, char *to_print)
 			fstruct->zeroes = fstruct->precision - len;
 	}	
 }
-
-void	lenint_z(t_flags *fstruct)
-{
-	int len;
-
-	len = 0;
-	fstruct->len = len;
-	if (fstruct->is_precision != 0)
-	{
-		if (fstruct->precision > len)
-			fstruct->zeroes = fstruct->precision - len;
-	}	
-}
-
-
-void	valprec_z(t_flags *f_struct)
-{
-	lenint_z(f_struct);
-	printi_width(f_struct);
-	printi_left(f_struct);
-} 
 
 void	is_i(t_flags *f_struct, va_list ap)
 {
