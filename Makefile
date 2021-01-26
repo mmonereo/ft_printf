@@ -6,33 +6,40 @@
 #    By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/16 15:24:17 by mmonereo          #+#    #+#              #
-#    Updated: 2021/01/22 01:52:32 by mmonereo         ###   ########.fr        #
+#    Updated: 2021/01/26 12:10:35 by mmonereo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= libftprintf.a
 
-SRCS			=	ft_printf.c is_i.c is_s.c is_x.c is_p.c is_u.c is_c.c is_perc.c mod.c 
+LIBFT			= libft
+
+SRCS			=	ft_printf.c is_i.c is_s.c is_x.c \
+					is_p.c is_u.c is_c.c is_perc.c mod.c 
 
 OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
+C				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror 
-
-%.o: 			%.c
-				$(CC) $(CFLAGS) -c -o $@ $<
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				@make -C $(LIBFT)
+				@cp libft/libft.a ./printf
+				@ar rcs $(NAME) $(OBJS)
+
+%.o: 			%.c
+				$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-				$(RM) $(OBJS) 
+				@$(RM) $(OBJS)
+				@make clean -C $(LIBFT) 
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(OBJS)
+				@make fclean -C $(LIBFT) 
 
 re:				fclean all
 
