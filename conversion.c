@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:18 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 16:57:43 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:33:16 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	conversion(char *format, t_flags *fstruct, va_list ap)
 }
 
 void	modifiers(char *format, t_flags *fstruct, va_list ap)
-{		
-		flags(format, fstruct);
-		width(format, fstruct, ap);
-		precision(format, fstruct, ap);
+{
+	flags(format, fstruct);
+	width(format, fstruct, ap);
+	precision(format, fstruct, ap);
 }

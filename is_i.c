@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 15:27:13 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 17:15:05 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:26:32 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	is_i(t_flags *f_struct, va_list ap)
 	if (arg == 0 && f_struct->is_precision == 1 && f_struct->precision == 0)
 	{
 		valprec_z(f_struct);
-		return;
+		return ;
 	}
 	to_print = ft_itoa_nosign(arg);
 	lenint(f_struct, to_print);

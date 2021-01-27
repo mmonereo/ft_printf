@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 17:15:09 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 16:30:24 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:30:24 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ typedef struct	s_flags
 	int		width;
 	int		precision;
 	int		is_precision;
-	int 	upper;
+	int		upper;
 	int		done;
-}	t_flags;
+}				t_flags;
 
 int		ft_printf	(const char *format, ...);
 void	struct_init	(t_flags *flags);
@@ -61,7 +61,7 @@ void	signzero	(t_flags *fstruct, int arg);
 void	printi_width(t_flags *fstruct);
 void	printi_left	(t_flags *fstruct);
 void	lenint		(t_flags *fstruct, char	*to_print);
-void	valprec_z 	(t_flags *f_struct);
+void	valprec_z	(t_flags *f_struct);
 void	lenint_z	(t_flags *fstruct);
 void	is_u		(t_flags *f_struct, va_list ap);
 void	is_p		(t_flags *f_struct, va_list ap);
@@ -72,6 +72,5 @@ void	print_percz	(t_flags *fstruct);
 
 char	*ft_itoa_base(uintmax_t value, uintmax_t base);
 char	*ft_itoa_base_upper(intmax_t value, intmax_t base);
-
 
 #endif
