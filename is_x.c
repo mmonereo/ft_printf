@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 10:17:14 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 16:29:49 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:42:19 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 void	is_x(t_flags *f_struct, va_list ap)
 {
-	uintmax_t arg;
-	char *to_print;
-	int i;
-	
-	arg = 0;
+	uintmax_t	arg;
+	char		*to_print;
+	int			i;
+
 	i = 0;
 	arg = (unsigned int)va_arg(ap, unsigned int);
 	if (arg == 0 && f_struct->is_precision == 1 && f_struct->precision == 0)
 	{
 		valprec_z(f_struct);
-		return;
+		return ;
 	}
 	if (f_struct->upper == 1)
 		to_print = ft_itoa_base_upper(arg, 16);

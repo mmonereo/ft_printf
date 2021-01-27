@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:26:12 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 16:32:08 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:39:40 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	lenint_z(t_flags *fstruct)
 	{
 		if (fstruct->precision > len)
 			fstruct->zeroes = fstruct->precision - len;
-	}	
+	}
 }
 
 void	valprec_z(t_flags *f_struct)
@@ -75,4 +75,4 @@ void	valprec_z(t_flags *f_struct)
 	lenint_z(f_struct);
 	printi_width(f_struct);
 	printi_left(f_struct);
-} 
+}

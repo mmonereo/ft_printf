@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:04:23 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/21 15:58:50 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:43:34 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	print_left(t_flags *fstruct)
 	}
 }
 
-int		get_len(t_flags *fstruct, char	*to_print)
+int		get_len(t_flags *fstruct, char *to_print)
 {
 	int len;
 
@@ -62,10 +62,10 @@ int		get_len(t_flags *fstruct, char	*to_print)
 
 void	is_s(t_flags *f_struct, va_list ap)
 {
-	char *to_print;
-	int i;
-	int len;
-	
+	char	*to_print;
+	int		i;
+	int		len;
+
 	i = 0;
 	to_print = (char *)va_arg(ap, char *);
 	if (to_print == NULL)

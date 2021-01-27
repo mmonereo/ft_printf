@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:38:16 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 11:11:52 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:41:30 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int main (void)
 	// org = printf("og: %7.4s, capullo, %-12.12s, calamita\n", sapo, "acuña");
 	// printf ("mine: %i,   org: %i\n", mine, org);
 
-	// // 						CHAR
-	char *sapo = "chimpacho";
-	mine = ft_printf("yo: %7c, capullo, %-12c, calamita\n", sapo[0], '\0');
-	org = printf("og: %7c, capullo, %-12c, calamita\n", sapo[0], '\0');
-	printf ("mine: %i,   org: %i\n", mine, org);
+	// // // 						CHAR
+	// char *sapo = "chimpacho";
+	// mine = ft_printf("yo: %7c, capullo, %-12c, calamita\n", sapo[0], '\0');
+	// org = printf("og: %7c, capullo, %-12c, calamita\n", sapo[0], '\0');
+	// printf ("mine: %i,   org: %i\n", mine, org);
 
 							// INT
 	// int var = 33;
@@ -44,11 +44,11 @@ int main (void)
 	// 	org = printf("og: %*u, %5.0u, 66\n", 6, var, -42);
 	// printf ("mine: %i,   org: %i\n", mine, org);
 
-					//		HEX
-	// int var = 457;
-	// mine = ft_printf("yo: %.6x, %-15X\n",var, -322);
-	// 	org = printf("og: %.6x, %-15X\n",var, -322);
-	// printf ("mine: %i,   org: %i\n", mine, org);
+							// HEX
+	int var = 457;
+	mine = ft_printf("yo: %.6x, %-15X\n",var, -322);
+		org = printf("og: %.6x, %-15X\n",var, -322);
+	printf ("mine: %i,   org: %i\n", mine, org);
 
 						//	POINTER
 	// int var = 457;

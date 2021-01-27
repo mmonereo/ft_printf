@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mod.c                                              :+:      :+:    :+:   */
+/*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:06:02 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/26 16:57:55 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 11:03:35 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	flags(char *format, t_flags *fstruct)
 void	widthstar(char *format, t_flags *fstruct, va_list ap)
 {
 	int wstar;
-	
+
 	if (format[fstruct->pos] == '*')
 	{
 		wstar = va_arg(ap, int);
@@ -37,8 +37,8 @@ void	widthstar(char *format, t_flags *fstruct, va_list ap)
 			fstruct->left = 1;
 			fstruct->width = wstar * -1;
 		}
-		fstruct->pos++;	
-	}	
+		fstruct->pos++;
+	}
 }
 
 void	width(char *format, t_flags *fstruct, va_list ap)

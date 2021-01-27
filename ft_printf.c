@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:38:27 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/27 10:29:03 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 10:38:34 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		parse(char *format, t_flags *fstruct, va_list ap)
 			if (ft_strchr(SYMBOLS, format[fstruct->pos + 1]))
 			{
 				fstruct->pos = fstruct->pos + 1;
-				while (ft_strchr(SYMBOLS, format[fstruct->pos]) 
+				while (ft_strchr(SYMBOLS, format[fstruct->pos])
 				&& (fstruct->done == 0))
 					fstruct->pos = mod_parse(format, fstruct, ap);
 			}
@@ -84,7 +84,7 @@ int		ft_printf(const char *format, ...)
 	int		final_count;
 	char	*save;
 	t_flags	*fl_struct;
-	
+
 	final_count = 0;
 	save = ft_strdup(format);
 	if (!(fl_struct = malloc(sizeof(t_flags))))

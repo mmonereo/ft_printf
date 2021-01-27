@@ -6,18 +6,18 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 17:15:09 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/27 10:30:24 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 11:00:13 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#	ifndef FT_PRINTF_H
+#	define FT_PRINTF_H
 
-#include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <stdint.h>
+#	include "libft.h"
+#	include <unistd.h>
+#	include <stdlib.h>
+#	include <stdarg.h>
+#	include <stdint.h>
 
 # define	SYMBOLS	"-.*0123456789siudxXpc%"
 # define	CONVERSIONS	"siudxXpc%"
