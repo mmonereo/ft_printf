@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 17:15:09 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/27 11:17:12 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/27 11:19:24 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 #	include <stdarg.h>
 #	include <stdint.h>
 
-#	define	SYMBOLS "-.*0123456789siudxXpc%"
-#	define	CONVERSIONS "siudxXpc%"
-#	define	MODIFIERS "-.*0123456789"
+#	define SYMBOLS "-.*0123456789siudxXpc%"
+#	define CONVERSIONS "siudxXpc%"
+#	define MODIFIERS "-.*0123456789"
 
 typedef struct				s_flags
 {
