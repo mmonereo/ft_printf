@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:45:42 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/27 10:32:10 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/28 17:20:38 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,14 @@ void	is_p(t_flags *f_struct, va_list ap)
 	p = 0;
 	p = (unsigned long long)va_arg(ap, void *);
 	to_print = ft_itoa_base(p, 16);
-	f_struct->is_precision = 0;
 	get_len(f_struct, to_print);
 	f_struct->len += 2;
 	print_width(f_struct);
 	print_0x(f_struct);
-	while (to_print[i] != '\0')
+	if (!((void *)p == NULL && f_struct->is_precision == 1))
 	{
-		write(1, &to_print[i++], 1);
-		f_struct->printed += 1;
+		while (to_print[i] != '\0')
+			f_struct->printed += write(1, &to_print[i++], 1);
 	}
 	print_left(f_struct);
 	free(to_print);
