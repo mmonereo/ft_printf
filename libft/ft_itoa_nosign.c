@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 13:45:01 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/28 13:46:06 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/28 13:49:57 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*ft_itoa_nosign(int n)
 	unsigned int	len;
 	unsigned int	i;
 	char			*res;
-	unsigned int 	num;
+	unsigned int	num;
 
 	num = n;
 	if (n < 0)
