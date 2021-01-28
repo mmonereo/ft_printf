@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 17:15:09 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/28 13:38:37 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/28 13:40:12 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ void						struct_reset(t_flags *flags);
 int							mod_parse(char *format, t_flags *fstruct, 
 							va_list ap);
 int							parse(char *format, t_flags *fstruct, va_list ap);
-void						modifiers(char *format, t_flags *fstruct, 
+void						modifiers(char *format, t_flags *fstruct,
 							va_list ap);
 void						flags(char *format, t_flags *fstruct);
-void						conversion(char *format, t_flags *fstruct, 
+void						conversion(char *format, t_flags *fstruct,
 							va_list ap);
 void						width(char *format, t_flags *fstruct, va_list ap);
-void						widthstar(char *format, t_flags *fstruct, 
+void						widthstar(char *format, t_flags *fstruct,
 							va_list ap);
-void						precision(char *format, t_flags *fstruct, 
+void						precision(char *format, t_flags *fstruct,
 							va_list ap);
-void						precstar(char *format, t_flags *fstruct, 
+void						precstar(char *format, t_flags *fstruct,
 							va_list ap);
 void						is_s(t_flags *f_struct, va_list ap);
 void						print_width(t_flags *fstruct);
