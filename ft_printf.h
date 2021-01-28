@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 17:15:09 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/28 13:40:12 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/28 13:43:06 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef	struct				s_flags
 int							ft_printf(const char *format, ...);
 void						struct_init(t_flags *flags);
 void						struct_reset(t_flags *flags);
-int							mod_parse(char *format, t_flags *fstruct, 
+int							mod_parse(char *format, t_flags *fstruct,
 							va_list ap);
 int							parse(char *format, t_flags *fstruct, va_list ap);
 void						modifiers(char *format, t_flags *fstruct,
