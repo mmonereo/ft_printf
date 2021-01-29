@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:38:16 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/28 16:27:02 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/29 09:49:02 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@ int main (void)
 	int org;
 	
 	// // // 						STRING
-	// char *ss = "chimpacho";
-	// mine = ft_printf("yo: %7.4s, capullo, %-12.12s, calamita\n", ss, "acuña");
-	// org = printf("og: %7.4s, capullo, %-12.12s, calamita\n", ss, "acuña");
-	// printf ("mine: %i,   org: %i\n", mine, org);
+	char *s = "moul ino";
+	mine = ft_printf("yo: %*.*s, %--7s, calamita\n", 7, 3, s, "acuña");
+	org = printf("og: %*.*s, %--7s, calamita\n", 7, 3, s, "acuña");
+	printf ("mine: %i,   org: %i\n", mine, org);
 
 	// // // // 						CHAR
-	// char *s = "chimpacho";
-	// mine = ft_printf("yo: %7c, capullo, %-12c, calamita\n", s[0], '\0');
-	// org = printf("og: %7c, capullo, %-12c, calamita\n", s[0], '\0');
+	// char *s = "acho";
+	// mine = ft_printf("yo: %7c, %-12c, calamita\n", s[0], '\0');
+	// org = printf("og: %7c, %-12c, calamita\n", s[0], '\0');
 	// printf ("mine: %i,   org: %i\n", mine, org);
 
 	// 						// INT
-	// int var1 = 33;
-	// mine = ft_printf("yo: %*i, %5.0d, 66\n", 6, var1, 0);
-	// 	org = printf("og: %*i, %5.0d, 66\n", 6, var1, 0);
+	// int var1 = 37;
+	// mine = ft_printf("yo: %10.8i, %d, 66\n", var1, 0);
+	// 	org = printf("og: %10.8i, %d, 66\n", var1, 0);
 	// printf ("mine: %i,   org: %i\n", mine, org);
 
 	// 				// UNSIGNED INT
@@ -52,11 +52,11 @@ int main (void)
 	// printf ("mine: %i,   org: %i\n", mine, org);
 
 	// 					//	POINTER
-	int *var4 = 0;
-	// char c = 'f';
-	mine = ft_printf("yo: %20p, %-14p\n",&var4, NULL);
-		org = printf("og: %20p, %-14p\n",&var4, NULL);
-	printf ("mine: %i,   org: %i\n", mine, org);
+	// int *var4 = 0;
+	// // char c = 'f';
+	// mine = ft_printf("yo: %p, %p\n",&var4, NULL);
+	// 	org = printf("og: %p, %p\n",&var4, NULL);
+	// printf ("mine: %i,   org: %i\n", mine, org);
 
 	// 	// // 						PERCENT
 	// mine = ft_printf("yo: %7%, %012%, calamita\n");

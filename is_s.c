@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:04:23 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/27 10:43:34 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/28 16:52:25 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	print_width(t_flags *fstruct)
 	{
 		c = ' ';
 		i = fstruct->width - (fstruct->len);
+		if (fstruct->is_zero == 1)
+			c = '0';
 		while (i-- > 0)
 		{
 			write(1, &c, 1);

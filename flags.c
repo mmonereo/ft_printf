@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:06:02 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/27 11:03:35 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/01/29 09:49:31 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	widthstar(char *format, t_flags *fstruct, va_list ap)
 			fstruct->left = 1;
 			fstruct->width = wstar * -1;
 		}
-		fstruct->pos++;
+		while (format[fstruct->pos] == '*')
+			fstruct->pos++;
 	}
 }
 
