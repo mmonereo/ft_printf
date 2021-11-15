@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:38:16 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/29 09:49:02 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/11/15 11:16:25 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int main (void)
 	int org;
 	
 	// // // 						STRING
-	char *s = "moul ino";
-	mine = ft_printf("yo: %*.*s, %--7s, calamita\n", 7, 3, s, "acuña");
-	org = printf("og: %*.*s, %--7s, calamita\n", 7, 3, s, "acuña");
+	char *s = "mouli nette";
+	mine = ft_printf("yo: %*.*s, %--7s, robot\n", 7, 3, s, "cereals");
+	org = printf("og: %*.*s, %--7s, robot\n", 7, 3, s, "cereals");
 	printf ("mine: %i,   org: %i\n", mine, org);
 
 	// // // // 						CHAR
 	// char *s = "acho";
-	// mine = ft_printf("yo: %7c, %-12c, calamita\n", s[0], '\0');
-	// org = printf("og: %7c, %-12c, calamita\n", s[0], '\0');
+	// mine = ft_printf("yo: %7c, %-12c, robot\n", s[0], '\0');
+	// org = printf("og: %7c, %-12c, robot\n", s[0], '\0');
 	// printf ("mine: %i,   org: %i\n", mine, org);
 
 	// 						// INT
